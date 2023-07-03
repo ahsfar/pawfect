@@ -24,10 +24,10 @@
         $res = mysqli_query($conn, 'SELECT * FROM Contact');
 
         if (mysqli_num_rows($res) <= 0) {
-            echo "<h2>Contact page is empty.</h2>";
+            echo "<h2>No Messages.</h2>";
         }
         else {
-            echo "<table> <tr align=\"left\"> <th> Message </th> <th> Email (USD) </th> </tr>";
+            echo "<table> <tr align=\"left\"> <th> DogName </th> <th> Email </th> </tr>";
             while ($row = mysqli_fetch_assoc($res)) {
                 echo "<tr align=\"left\"> <td> ".$row["DogName"]." </td>";
                 echo "<td> ".$row["Email"]." </td> </tr>";
