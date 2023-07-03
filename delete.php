@@ -17,20 +17,20 @@
         //Test if table exists
         $res = mysqli_query($conn, "SHOW TABLES LIKE 'Contact'");
         if (mysqli_num_rows($res) <= 0) {
-            echo "<h2>Contact page is empty</h2>";
+            echo "<h2>No messages</h2>";
         } else { 
 
             //Delete data
-            $ProductName = $_POST['DogName'];
+            $DogName = $_POST['DogName'];
 
             if ($stmt = mysqli_prepare($conn, "DELETE FROM Contact WHERE DogName = ?")) {
-                mysqli_stmt_bind_param($stmt, 's', $ProductName);
+                mysqli_stmt_bind_param($stmt, 's', $DogName);
                 mysqli_stmt_execute($stmt);
                 if (mysqli_stmt_affected_rows($stmt) == 0) {
-                    echo "<h2>Message \"$ProductName\" was not found in the contact page.</h2>";
+                    echo "<h2> \"$DogName\" was not found in the contact page.</h2>";
                 }
                 else {
-                    echo "<h2>Message \"$ProductName\" has been removed from the contact page.</h2>";
+                    echo "<h2> \"$DogName\" has been removed from the contact page.</h2>";
                 }
 
                 mysqli_stmt_close($stmt);
