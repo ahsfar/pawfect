@@ -25,17 +25,17 @@
         }
 
         // Insert data from form
-        $ProductName = $_POST['DogName'];
-        $Price = $_POST['Email'];
+        $DogName = $_POST['DogName'];
+        $Email = $_POST['Email'];
 
         if ($stmt = mysqli_prepare($conn, "INSERT INTO Contact (DogName, Email) VALUES (?, ?)")) {
-            mysqli_stmt_bind_param($stmt, 'sd', $ProductName, $Price);
+            mysqli_stmt_bind_param($stmt, 'sd', $DogName, $Email);
             mysqli_stmt_execute($stmt);
             if (mysqli_stmt_affected_rows($stmt) == 0) {
                 echo "<h2>Unalbe to send message.</h2>";
             }
             else {
-                echo "<h2>Message \"$ProductName\" has been successfully sent.</h2>";
+                echo "<h2> Message has been successfully sent.</h2>";
             }
             mysqli_stmt_close($stmt);
             
