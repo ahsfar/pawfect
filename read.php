@@ -15,22 +15,22 @@
     }
 
     //Test if table exists
-    $res = mysqli_query($conn, "SHOW TABLES LIKE 'Products'");
+    $res = mysqli_query($conn, "SHOW TABLES LIKE 'Contact'");
 
     if (mysqli_num_rows($res) <= 0) {
-        echo "<h2>Catalog is empty</h2>";
+        echo "<h2>Contact page is empty</h2>";
     } else {
         //Query and print data
-        $res = mysqli_query($conn, 'SELECT * FROM Products');
+        $res = mysqli_query($conn, 'SELECT * FROM Contact');
 
         if (mysqli_num_rows($res) <= 0) {
-            echo "<h2>Catalog is empty.</h2>";
+            echo "<h2>Contact page is empty.</h2>";
         }
         else {
-            echo "<table> <tr align=\"left\"> <th> Product Name </th> <th> Price (USD) </th> </tr>";
+            echo "<table> <tr align=\"left\"> <th> Message </th> <th> Email (USD) </th> </tr>";
             while ($row = mysqli_fetch_assoc($res)) {
-                echo "<tr align=\"left\"> <td> ".$row["ProductName"]." </td>";
-                echo "<td> ".$row["Price"]." </td> </tr>";
+                echo "<tr align=\"left\"> <td> ".$row["DogName"]." </td>";
+                echo "<td> ".$row["Email"]." </td> </tr>";
             }
             echo "</table>";
         }
