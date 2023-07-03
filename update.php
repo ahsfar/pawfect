@@ -53,8 +53,8 @@
                 <td class="no-border"> <input type="text" name="ProductName" id="ProductName"> </td>
             </tr>
             <tr>
-                <td class="no-border"> <label for="Price">Updated email</label> </td>
-                <td class="no-border"> <input type="text" name="Price" id="Price"> </td>
+                <td class="no-border"> <label for="Email">Updated email</label> </td>
+                <td class="no-border"> <input type="email" name="Email" id="Email"> </td>
             </tr>
         </table> 
         <br><br>
