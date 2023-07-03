@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td class="no-border"> <label for="Email">Email</label> </td>
-                <td class="no-border"> <input type="text" name="Email" id="Email"> </td>
+                <td class="no-border"> <input type="email" name="Email" id="Email"> </td>
             </tr>
         </table>      
         <br><br>
