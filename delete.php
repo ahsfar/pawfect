@@ -52,8 +52,8 @@
 
         <table>
             <tr>
-                <td class="no-border"> <label for="ProductName">Message</label> </td>
-                <td class="no-border"> <input type="text" name="ProductName" id="ProductName"> </td>
+                <td class="no-border"> <label for="DogName">Message</label> </td>
+                <td class="no-border"> <input type="text" name="DogName" id="DogName"> </td>
             </tr>
         </table>
         <br><br>
