@@ -43,7 +43,7 @@
 
     ?>
 
-    <h2>Update a Product</h2>
+    <h2>Update the message</h2>
     <br>
 
     <form method="post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
