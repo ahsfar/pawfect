@@ -54,12 +54,12 @@
     <form method="post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <table>
             <tr>
-                <td class="no-border"> <label for="ProductName">Dog Name</label> </td>
-                <td class="no-border"> <input type="text" name="ProductName" id="ProductName"> </td>
+                <td class="no-border"> <label for="DogName">Dog Name</label> </td>
+                <td class="no-border"> <input type="text" name="DogName" id="DogName"> </td>
             </tr>
             <tr>
-                <td class="no-border"> <label for="Price">Email</label> </td>
-                <td class="no-border"> <input type="text" name="Price" id="Price"> </td>
+                <td class="no-border"> <label for="Email">Email</label> </td>
+                <td class="no-border"> <input type="text" name="Email" id="Email"> </td>
             </tr>
         </table>      
         <br><br>
