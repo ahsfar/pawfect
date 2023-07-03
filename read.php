@@ -47,8 +47,8 @@
         <tr>
             <td> <a href="insert.php">Send a Message</a> </td>
 <!--             <td> <a href="update.php">Update a Message</a> </td>
-            <td> <a href="delete.php">Remove the message</a> </td> -->
-            <td> <a href="index.php">Back to Contact Us</a> </td>
+            <td> <a href="delete.php">Remove the message</a> </td>
+            <td> <a href="index.php">Back to Contact Us</a> </td> -->
         </tr>
     </table>
     
