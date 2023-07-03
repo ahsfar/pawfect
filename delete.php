@@ -17,7 +17,7 @@
         //Test if table exists
         $res = mysqli_query($conn, "SHOW TABLES LIKE 'Contact'");
         if (mysqli_num_rows($res) <= 0) {
-            echo "<h2>Catalog is empty</h2>";
+            echo "<h2>Contact page is empty</h2>";
         } else { 
 
             //Delete data
