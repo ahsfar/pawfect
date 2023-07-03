@@ -29,7 +29,7 @@
         $Email = $_POST['Email'];
 
         if ($stmt = mysqli_prepare($conn, "INSERT INTO contact (DogName, Email) VALUES (?, ?)")) {
-            mysqli_stmt_bind_param($stmt, 'sd', $DogName, $Email);
+            mysqli_stmt_bind_param($stmt, 'ss', $DogName, $Email);
             mysqli_stmt_execute($stmt);
             if (mysqli_stmt_affected_rows($stmt) == 0) {
                 echo "<h2>Unalbe to send message.</h2>";
