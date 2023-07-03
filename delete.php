@@ -15,22 +15,22 @@
         }
 
         //Test if table exists
-        $res = mysqli_query($conn, "SHOW TABLES LIKE 'Products'");
+        $res = mysqli_query($conn, "SHOW TABLES LIKE 'Contact'");
         if (mysqli_num_rows($res) <= 0) {
             echo "<h2>Catalog is empty</h2>";
         } else { 
 
             //Delete data
-            $ProductName = $_POST['ProductName'];
+            $ProductName = $_POST['DogName'];
 
-            if ($stmt = mysqli_prepare($conn, "DELETE FROM Products WHERE ProductName = ?")) {
+            if ($stmt = mysqli_prepare($conn, "DELETE FROM Contact WHERE DogName = ?")) {
                 mysqli_stmt_bind_param($stmt, 's', $ProductName);
                 mysqli_stmt_execute($stmt);
                 if (mysqli_stmt_affected_rows($stmt) == 0) {
-                    echo "<h2>Product \"$ProductName\" was not found in the catalog.</h2>";
+                    echo "<h2>Message \"$ProductName\" was not found in the contact page.</h2>";
                 }
                 else {
-                    echo "<h2>Product \"$ProductName\" has been removed from the catalog.</h2>";
+                    echo "<h2>Message \"$ProductName\" has been removed from the contact page.</h2>";
                 }
 
                 mysqli_stmt_close($stmt);
@@ -45,14 +45,14 @@
 
     ?>
 
-    <h2>Remove a Product</h2>
+    <h2>Remove the Message</h2>
     <br>
 
     <form method="post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
         <table>
             <tr>
-                <td class="no-border"> <label for="ProductName">Product Name</label> </td>
+                <td class="no-border"> <label for="ProductName">Message</label> </td>
                 <td class="no-border"> <input type="text" name="ProductName" id="ProductName"> </td>
             </tr>
         </table>
@@ -67,9 +67,9 @@
     <br> <br> <br>
     <table>
         <tr>
-            <td> <a href="delete.php">Remove Another Product</a> </td>
-            <td> <a href="read.php">View Catalog</a> </td>
-            <td> <a href="index.php">Back to Home Page</a> </td>
+            <td> <a href="delete.php">Remove Another Message</a> </td>
+            <td> <a href="read.php">View Messages</a> </td>
+            <td> <a href="index.php">Back to Contact us</a> </td>
         </tr>
     </table>
 
