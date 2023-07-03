@@ -17,20 +17,20 @@
         //Test if table exists
         $res = mysqli_query($conn, "SHOW TABLES LIKE 'Contact'");
         if (mysqli_num_rows($res) <= 0) {
-            echo "<h2>Contact Page is empty</h2>";
+            echo "<h2>No messages</h2>";
         } else {
             //Update data
-            $ProductName = $_POST['ProductName'];
-            $Price = $_POST['Price'];
+            $DogName = $_POST['DogName'];
+            $Email = $_POST['Email'];
 
-            if ($stmt = mysqli_prepare($conn, "UPDATE Products SET Price = ? WHERE ProductName = ?")) {
-                mysqli_stmt_bind_param($stmt, 'ds', $Price, $ProductName);
+            if ($stmt = mysqli_prepare($conn, "UPDATE Contact SET Email = ? WHERE DogName = ?")) {
+                mysqli_stmt_bind_param($stmt, 'ds', $Email, $DogName);
                 mysqli_stmt_execute($stmt);
                 if (mysqli_stmt_affected_rows($stmt) == 0) {
-                    echo "<h2>Message \"$ProductName\" was not found in the contact page.</h2>";
+                    echo "<h2>\"$DogName\" was not found in the contact page.</h2>";
                 }
                 else {
-                    echo "<h2>Email of the Dog \"$ProductName\" has been successfully updated to $Price.</h2>";
+                    echo "<h2>Email of the Dog \"$DogName\" has been successfully updated to $Email.</h2>";
                 }
                 mysqli_stmt_close($stmt);
                 
@@ -49,7 +49,7 @@
     <form method="post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <table>
             <tr>
-                <td class="no-border"> <label for="ProductName">Message</label> </td>
+                <td class="no-border"> <label for="ProductName">Name</label> </td>
                 <td class="no-border"> <input type="text" name="ProductName" id="ProductName"> </td>
             </tr>
             <tr>
