@@ -74,8 +74,8 @@
     <table>
         <tr>
             <td> <a href="insert.php">Add Another Contact</a> </td>
-            <td> <a href="read.php">View messages</a> </td>
-            <td> <a href="index.php">Back to Contact Us</a> </td>
+<!--             <td> <a href="read.php">View messages</a> </td>
+            <td> <a href="index.php">Back to Contact Us</a> </td> -->
         </tr>
     </table>
 
