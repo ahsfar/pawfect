@@ -14,7 +14,7 @@
             die('Failed to connect to MySQL: '.mysqli_connect_error());
         }
 
-        $res = mysqli_query($conn, "SHOW TABLES LIKE 'Products'");
+        $res = mysqli_query($conn, "SHOW TABLES LIKE 'Contact'");
     
         if (mysqli_num_rows($res) <= 0) {
             //Create table if it does not exist
@@ -25,17 +25,17 @@
         }
 
         // Insert data from form
-        $ProductName = $_POST['ProductName'];
-        $Price = $_POST['Price'];
+        $ProductName = $_POST['DogName'];
+        $Price = $_POST['Email'];
 
-        if ($stmt = mysqli_prepare($conn, "INSERT INTO Products (ProductName, Price) VALUES (?, ?)")) {
+        if ($stmt = mysqli_prepare($conn, "INSERT INTO Contact (DogName, Email) VALUES (?, ?)")) {
             mysqli_stmt_bind_param($stmt, 'sd', $ProductName, $Price);
             mysqli_stmt_execute($stmt);
             if (mysqli_stmt_affected_rows($stmt) == 0) {
-                echo "<h2>Catalog update failed.</h2>";
+                echo "<h2>Unalbe to send message.</h2>";
             }
             else {
-                echo "<h2>Product \"$ProductName\" has been successfully added.</h2>";
+                echo "<h2>Message \"$ProductName\" has been successfully sent.</h2>";
             }
             mysqli_stmt_close($stmt);
             
@@ -48,17 +48,17 @@
 
     ?>
 
-    <h2>Add a Product</h2>
+    <h2>Send message</h2>
     <br>
 
     <form method="post" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <table>
             <tr>
-                <td class="no-border"> <label for="ProductName">Product Name</label> </td>
+                <td class="no-border"> <label for="ProductName">Dog Name</label> </td>
                 <td class="no-border"> <input type="text" name="ProductName" id="ProductName"> </td>
             </tr>
             <tr>
-                <td class="no-border"> <label for="Price">Price (USD)</label> </td>
+                <td class="no-border"> <label for="Price">Email</label> </td>
                 <td class="no-border"> <input type="text" name="Price" id="Price"> </td>
             </tr>
         </table>      
@@ -73,9 +73,9 @@
     <br> <br> <br>
     <table>
         <tr>
-            <td> <a href="insert.php">Add Another Product</a> </td>
-            <td> <a href="read.php">View Catalog</a> </td>
-            <td> <a href="index.php">Back to Home Page</a> </td>
+            <td> <a href="insert.php">Add Another Contact</a> </td>
+            <td> <a href="read.php">View messages</a> </td>
+            <td> <a href="index.php">Back to Contact Us</a> </td>
         </tr>
     </table>
 
