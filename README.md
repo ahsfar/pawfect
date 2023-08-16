@@ -1,3 +1,5 @@
+### It was an open source project used to get hands on experience on MySQL and Azure app Service (with Azure DB)
+
 # Build a PHP and MySQL - Flexible Server app on Azure App Service
 
 Build and deploy a sample PHP application to Azure App Service, and integrate it with Azure Database for MySQL - Flexible Server on the back end.
