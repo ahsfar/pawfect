@@ -153,3 +153,7 @@ The deployment may take a few minutes to succeed.
 Finally, test the application by browsing to `https://<app-name>.azurewebsites.net`, and then add, view, update or delete items from the Product catalogue.
 
 Congratulations! You have successfully deployed a sample PHP application to Azure App Service and integrated it with Azure Database for MySQL - Flexible Server on the back end.
+
+
+YT Link: https://www.youtube.com/watch?v=SET18Rh4ZGk&t=2207s 
+(For reference)
